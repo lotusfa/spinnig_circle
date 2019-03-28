@@ -4,7 +4,10 @@
 	<title>Apple Proj</title>
 </head>
 <body style="width: 100%;height: 100%;">
-	<img class="image" id="rotate_image"  src="./colorwheel.png" alt="" width="500" height="500"  ondblclick="ondblclick()">
+	<div id="rotate_image" style="padding: 20px;">
+		<img class="image" src="./colorwheel.png" alt="" width="500" height="500"  ondblclick="ondblclick()">
+	</div>
+	
 </body>
 </html>
 
@@ -69,6 +72,12 @@
 	  });
 
 	  $("#rotate_image").on("touchend", function(e){
+	       e.preventDefault();
+	       console.log('touchend');
+	       add_spped = false;
+	  });
+
+	  $("#rotate_image").on("touchcancel", function(e){
 	       e.preventDefault();
 	       console.log('touchend');
 	       add_spped = false;
